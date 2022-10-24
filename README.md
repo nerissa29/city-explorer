@@ -37,10 +37,10 @@ image.png
 
 Name of feature: *Set up your React repository & API keys*
 
-Estimate of time needed to complete: _____
+Estimate of time needed to complete: 40 min - 1 hour
 
 Start time: 6:15 pm
 
-Finish time: _____
+Finish time: 7:13 PM
 
-Actual time needed to complete: _____
+Actual time needed to complete: 58 min
