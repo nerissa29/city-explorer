@@ -40,3 +40,30 @@
 .selectedCityInfo {
   margin-top: 10%;
 }
+
+h1 {
+  padding-top: 150px;
+}
+.fig-parent, h1, form, .selectedCityInfo {
+  /* display: flex;
+  justify-content: center;
+  align-items: center; */
+  margin-left: 40%;
+}
+
+
+
+.fig-caption {
+  font-weight: bold;
+  color: rgb(201, 35, 52);
+  width: 350px;
+}
+
+section {
+  background-color:rgba(75, 71, 64, 0.5);
+  padding: 150px;
+}
+
+body {
+  background-image: url('../src/images/luca-_J5SQg9nYzo-unsplash.jpg');
+}

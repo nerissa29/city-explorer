@@ -3,6 +3,8 @@ import React from 'react';
 import axios from 'axios';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import ListGroup from 'react-bootstrap/ListGroup';
+import Figure from 'react-bootstrap/Figure';
+
 
 
 // function App() {
@@ -12,10 +14,11 @@ class App extends React.Component {
     super(props);
     this.state = {
       city: '',
-      cityData1: [],
-      // display_name: '',
-      // lat: '',
-      // lon: '',
+      cityData: [],
+      display_name: '',
+      lat: '',
+      lon: '',
+      mapUrl: '',
     }
   }
 
@@ -33,35 +36,56 @@ class App extends React.Component {
 
     // I was using '' single quote instead of backticks causing error when getting data, TA Raven caught it
 
-    // let url = `https://maps.locationiq.com/v3/staticmap?key=${process.env.REACT_APP_LOCATIONIQ_API_KEY}&q=${this.state.city}&center=40.7484284,-73.9856546198733&zoom=10`
-
     let url = `https://us1.locationiq.com/v1/search?key=${process.env.REACT_APP_LOCATIONIQ_API_KEY}&q=${this.state.city}&format=json`
 
-    console.log(url);
+    console.log('city', this.state.city);
+    console.log('lat', this.state.lat);
+    console.log('lon', this.state.lon);
+
 
     let cityData = await axios.get(url);
+
+    // TA Charlie advised cityData.data instead of this.state.lat for both latitude and longitude
+
+    let mapUrl = `https://maps.locationiq.com/v3/staticmap?key=${process.env.REACT_APP_LOCATIONIQ_API_KEY}&center=${cityData.data[0].lat},${cityData.data[0].lon}&zoom=10&markers=icon:tiny-red-cutout`
+    let mapData = await axios.get(mapUrl)
+    console.log('mapData', mapData.data);
+
     this.setState({
       cityData: cityData.data[0],
       display_name: cityData.data[0].display_name,
       lat: cityData.data[0].lat,
       lon: cityData.data[0].lon,
-
+      mapUrl: mapUrl,
     })
-    console.log(cityData.data);
+    console.log('cityData', cityData.data);
+
 
   }
 
-  render() {
-    // let selectedCity = this.state.cityData.map((selCity, index) => {
-    //   // return <ListGroup.Item key={index}>{selCity.display_name}{selCity.lat}{selCity.lon}</ListGroup.Item>
-    //   return <ListGroup.Item key={index}>{selCity.display_name}</ListGroup.Item>
+  // >>>>> not getting the lat and lon values <<<<
 
-    // })
+  // getMapData = async (event) => {
+  //   event.preventDefault();
+
+  //   let mapUrl = `https://maps.locationiq.com/v3/staticmap?key=${process.env.REACT_APP_LOCATIONIQ_API_KEY}&center=${this.state.lat},${this.state.lon}&zoom=10&markers=icon:tiny-red-cutout`
+
+  //   let mapData = await axios.get(mapUrl)
+  //   console.log('mapData', mapData.data);
+
+  //   this.setState({
+  //     mapUrl: mapUrl,
+  //   })
+  // }
+  
+
+  render() {
+  
     return (
 
       // TA Brandon advised to delete the pre-existing div and logo to see the deployed site at localhost
 
-      <>
+      <section>
         <h1>API Call</h1>
         <form onSubmit={this.getCityData}>
           <label>Enter City:
@@ -71,13 +95,26 @@ class App extends React.Component {
         </form>
 
         <ul className='selectedCityInfo'>
-          {/* <ListGroup> */}
             <ListGroup.Item>{this.state.display_name}</ListGroup.Item>
             <ListGroup.Item>{this.state.lat}</ListGroup.Item>
             <ListGroup.Item>{this.state.lon}</ListGroup.Item>
-          {/* </ListGroup> */}
         </ul>
-      </>
+
+        <Figure className='fig-parent'>
+          <Figure.Image
+            className='fig-image'
+            width={300}
+            height={300}
+            alt="city map"
+            src={this.state.mapUrl}
+          />
+          <Figure.Caption className='fig-caption'>
+            City: {this.state.display_name}, 
+            Latitude: {this.state.lat}, 
+            Longitude: {this.state.lon}
+          </Figure.Caption>
+        </Figure>
+      </section>
 
 
     );

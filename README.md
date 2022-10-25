@@ -28,6 +28,12 @@ Languages, Frameworks, and platforms:
 
 ## Change Log
 
+<!-- 01-01-2001 4:59pm - Application now has a fully-functional express server, with a GET route for the location resource. --> -->
+
+10-25-2022 11:09 pm - Application now has a fully-functional express server, with a GET route for the location resource.
+
+10-25-2022 12:37 am - Application now is showing image, with a GET route for the map resource.
+
 ## Credit and Collaborations
 
 Collaborated with accountability partners drawing/planning out the WRRC:
@@ -53,8 +59,20 @@ Name of feature: *Locations: As a user of City Explorer, I want to enter the nam
 
 Estimate of time needed to complete: 40 min - 1 hour
 
-Start time: 8:36 pm pm
+Start time: 8:36 pm
 
-Finish time: 11:09m
+Finish time: 11:09 pm
 
 Actual time needed to complete: 2 hours 33 min
+
+### Step 3. Map: As a user, I want to see a map of the city so that I can see the layout of the area I want to explore
+
+Name of feature: *Step 3. Map: As a user, I want to see a map of the city so that I can see the layout of the area I want to explore.*
+
+Estimate of time needed to complete: 1-2 hour
+
+Start time: 11:25 pm
+
+Finish time: 1:00 am
+
+Actual time needed to complete: 1 hour 35 min
