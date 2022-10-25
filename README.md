@@ -36,8 +36,13 @@ Languages, Frameworks, and platforms:
 
 ## Credit and Collaborations
 
-Collaborated with accountability partners drawing/planning out the WRRC:
+Collaborated with accountability partners, Jordan Kwan, and Nick Seidel, drawing/planning out the WRRC:
+<!-- <img scr='../src/images/WRRC.jpg'> -->
 image.png
+
+Image Credits
+
+- [background image](https://unsplash.com/photos/_J5SQg9nYzo)
 
 ## Time Estimates
 
