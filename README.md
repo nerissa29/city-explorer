@@ -35,6 +35,8 @@ image.png
 
 ## Time Estimates
 
+### Step 1: Set up your React repository & API keys
+
 Name of feature: *Set up your React repository & API keys*
 
 Estimate of time needed to complete: 40 min - 1 hour
@@ -44,3 +46,15 @@ Start time: 6:15 pm
 Finish time: 7:13 PM
 
 Actual time needed to complete: 58 min
+
+### Step 2:  Locations: As a user of City Explorer, I want to enter the name of a location so that I can see the exact latitude and longitude of that location
+
+Name of feature: *Locations: As a user of City Explorer, I want to enter the name of a location so that I can see the exact latitude and longitude of that location.*
+
+Estimate of time needed to complete: 40 min - 1 hour
+
+Start time: 8:36 pm pm
+
+Finish time:
+
+Actual time needed to complete:
