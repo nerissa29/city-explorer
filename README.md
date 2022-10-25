@@ -34,6 +34,8 @@ Languages, Frameworks, and platforms:
 
 10-25-2022 12:37 am - Application now is showing image, with a GET route for the map resource.
 
+10-25-2022 1:35 am - Application now is showing error message once condition is met
+
 ## Credit and Collaborations
 
 Collaborated with accountability partners, Jordan Kwan, and Nick Seidel, drawing/planning out the WRRC:
@@ -81,3 +83,15 @@ Start time: 11:25 pm
 Finish time: 1:00 am
 
 Actual time needed to complete: 1 hour 35 min
+
+### 4. Errors: As a user, I want clear messages if something goes wrong so I know if I need to make any changes or try again in a different manner
+
+Name of feature: *Step 3. Map: As a user, I want to see a map of the city so that I can see the layout of the area I want to explore.*
+
+Estimate of time needed to complete: 1-2 hour
+
+Start time: 1:30 am
+
+Finish time: 2:38 am
+
+Actual time needed to complete: 1 hour 8 min
