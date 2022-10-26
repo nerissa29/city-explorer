@@ -1,5 +1,6 @@
 import './App.css';
 import ErrorMessage from './components/ErrorMessage';
+import Weather from './components/Weather';
 import React from 'react';
 import axios from 'axios';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -23,6 +24,7 @@ class App extends React.Component {
       error: false,
       errorMessage: '',
       show: false,
+      weatherData: '',
     }
   }
 
@@ -64,6 +66,7 @@ class App extends React.Component {
         lon: cityData.data[0].lon,
         mapUrl: mapUrl,
         error: false,
+        getWeatherData: this.getWeatherData(),
       })
       console.log('cityData', cityData.data);
 
@@ -72,38 +75,23 @@ class App extends React.Component {
       this.setState({
         error: true,
         errorMessage: error.message
-      })
+      });
 
     }
   }
 
-  // handleErrorMessage = (err) => {
-  //   if (this.state.error) {
-  //     this.setState({
-  //       show: true,
-  //     })
-  //   }
-  // }
+  getWeatherData = async () => {
+    let weatherUrl = `${process.env.REACT_APP_SERVER}/weather?searchQuery=${this.state.city}?lat=${this.state.lat}?lon=${this.state.lon}`;
+    
+    let weatherData = await axios.get(weatherUrl);
 
- 
+    this.setState({
+      weatherData: weatherData,
+      lat: this.state.lat,
+      lon: this.state.lon
 
-
-
-  // >>>>> not getting the lat and lon values <<<<
-
-  // getMapData = async (event) => {
-  //   event.preventDefault();
-
-  //   let mapUrl = `https://maps.locationiq.com/v3/staticmap?key=${process.env.REACT_APP_LOCATIONIQ_API_KEY}&center=${this.state.lat},${this.state.lon}&zoom=10&markers=icon:tiny-red-cutout`
-
-  //   let mapData = await axios.get(mapUrl)
-  //   console.log('mapData', mapData.data);
-
-  //   this.setState({
-  //     mapUrl: mapUrl,
-  //   })
-  // }
-  
+    })
+  }
 
   render() {
   
@@ -145,8 +133,15 @@ class App extends React.Component {
           this.state.error ? <ErrorMessage /> : <p></p>
         } */}
 
+        <Weather 
+          weatherData = {this.state.weatherData}
+
+        />
+
         <ErrorMessage 
           errorMessage={this.state.errorMessage}
+          lat= {this.state.lat}
+          lon= {this.state.lon}
         />
 
       </section>
