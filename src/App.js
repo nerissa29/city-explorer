@@ -24,7 +24,7 @@ class App extends React.Component {
       error: false,
       errorMessage: '',
       show: false,
-      weatherData: '',
+      weatherData: [],
     }
   }
 
@@ -59,6 +59,8 @@ class App extends React.Component {
       let mapData = await axios.get(mapUrl)
       console.log('mapData', mapData.data);
 
+      this.getWeatherData(cityData.data[0]);
+
       this.setState({
         cityData: cityData.data[0],
         display_name: cityData.data[0].display_name,
@@ -66,7 +68,6 @@ class App extends React.Component {
         lon: cityData.data[0].lon,
         mapUrl: mapUrl,
         error: false,
-        getWeatherData: this.getWeatherData(),
       })
       console.log('cityData', cityData.data);
 
@@ -80,17 +81,23 @@ class App extends React.Component {
     }
   }
 
-  getWeatherData = async () => {
-    let weatherUrl = `${process.env.REACT_APP_SERVER}/weather?searchQuery=${this.state.city}?lat=${this.state.lat}?lon=${this.state.lon}`;
+  getWeatherData = async (cityLoc) => {
+    try {
+      let weatherUrl = `${process.env.REACT_APP_SERVER}/weather?city_name=${this.state.city}&lat=${cityLoc.lat}&lon=${cityLoc.lon}`;
     
-    let weatherData = await axios.get(weatherUrl);
+      let weatherData = await axios.get(weatherUrl);
+      console.log(weatherData);
 
-    this.setState({
-      weatherData: weatherData,
-      lat: this.state.lat,
-      lon: this.state.lon
+      this.setState({
+        weatherData: weatherData.data,
+      });
 
-    })
+    } catch (error) {
+      this.setState({
+        error: true,
+        errorMessage: error.message,
+      })
+    }
   }
 
   render() {
