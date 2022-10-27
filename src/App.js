@@ -1,6 +1,7 @@
 import './App.css';
 import ErrorMessage from './components/ErrorMessage';
 import Weather from './components/Weather';
+import Movie from './components/Movie';
 import React from 'react';
 import axios from 'axios';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -26,6 +27,7 @@ class App extends React.Component {
       errorMessage: '',
       show: false,
       weatherData: [],
+      movieData: [],
     }
   }
 
@@ -57,13 +59,22 @@ class App extends React.Component {
       // TA Charlie advised cityData.data instead of this.state.lat for both latitude and longitude
 
       let mapUrl = `https://maps.locationiq.com/v3/staticmap?key=${process.env.REACT_APP_LOCATIONIQ_API_KEY}&center=${cityData.data[0].lat},${cityData.data[0].lon}&zoom=10&markers=icon:tiny-red-cutout`
+
       let mapData = await axios.get(mapUrl)
       console.log('mapData', mapData.data);
+      
 
       let cityLocation = cityData.data[0];
-      this.getWeatherData(cityLocation);
+      let citySearched = this.state.city;
 
-      this.getMovieData(this.city)
+      console.log('cityData.data[0]', cityData.data[0])
+      console.log('city', this.state.city);
+      console.log('cityData', cityData);
+
+      console.log('city location', cityLocation)
+
+      this.getWeatherData(cityLocation);
+      this.getMovieData(citySearched)
 
       this.setState({
         cityData: cityData.data[0],
@@ -73,7 +84,6 @@ class App extends React.Component {
         mapUrl: mapUrl,
         error: false,
       })
-      console.log('cityData', cityData.data);
 
     } catch(error){
       console.log('errorMessage', error.message);
@@ -106,23 +116,26 @@ class App extends React.Component {
     }
   }
 
-  // getMovieData = async (cityTitle) => {
-  //   try {
-  //     let movieURL = `${process.env.REACT_APP_SERVER}/movies?title${cityTitle.title}`;
+  getMovieData = async (cityTitle) => {
+    try {
+      let movieURL = `${process.env.REACT_APP_SERVER}/movies?city_name=${cityTitle}&language=en-US&page=1&include_adult=false`;
 
-  //     let movieData = await axios.get(movieURL);
+      console.log('cityTitle', cityTitle)
 
-  //     this.setState({
-  //       movieData: movieData.data
-  //     })
+      let movieData = await axios.get(movieURL);
 
-  //   } catch (error) {
-  //     this.setState({
-  //       error: true,
-  //       errorMessage: error.message,
-  //     });
-  //   }
-  // }
+      this.setState({
+        movieData: movieData.data,
+        error: false,
+      })
+
+    } catch (error) {
+      this.setState({
+        error: true,
+        errorMessage: error.message,
+      });
+    }
+  }
 
   render() {
   
@@ -168,10 +181,10 @@ class App extends React.Component {
           weatherData = {this.state.weatherData}
 
         />
-{/* 
+
         <Movie
           movieData = {this.state.movieData}
-        /> */}
+        />
 
         <ErrorMessage 
           errorMessage={this.state.errorMessage}

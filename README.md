@@ -38,13 +38,21 @@ Languages, Frameworks, and platforms:
 
 10-26-2022 8:11 pm - Application now has a fully-functional front-end and back-end
 
+10-27-2022 8:11 pm - The backend are now able to send data to the front-end, getting information from third party API's 'Weatherbit' and 'Movie DB'.
+
 ## Credit and Collaborations
 
 Collaborated with accountability partners, Jordan Kwan, and Nick Seidel, drawing/planning out the WRRC:
 
 ![WRRC Day 1](src/images/WRRC.jpg)
-![WRRC Day 2](src/images/Lab 07 WRRC.jpg)
-![WRRC Day 3](src/images/Lab 08 WRRC.jpg)
+
+### WRRC Day 2
+
+![WRRC Day 2](src/images/Lab_07_WRRC.jpg)
+
+### WRRC Day 3
+
+![WRRC Day 3](src/images/Lab_08_WRRC.jpg)
 
 Image Credits
 
