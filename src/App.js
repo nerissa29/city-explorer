@@ -6,6 +6,7 @@ import axios from 'axios';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import ListGroup from 'react-bootstrap/ListGroup';
 import Figure from 'react-bootstrap/Figure';
+// import Movie from './components/Movie';
 
 
 
@@ -62,6 +63,8 @@ class App extends React.Component {
       let cityLocation = cityData.data[0];
       this.getWeatherData(cityLocation);
 
+      this.getMovieData(this.city)
+
       this.setState({
         cityData: cityData.data[0],
         display_name: cityData.data[0].display_name,
@@ -83,9 +86,10 @@ class App extends React.Component {
   }
 
   // https://localhost:3001/weather?city_name=seattle&lat=47.60621&lon=-122.33207
+
   getWeatherData = async (cityLoc) => {
     try {
-      let weatherUrl = `${process.env.REACT_APP_SERVER}/weather?city_name=${this.state.city}&lat=${cityLoc.lat}&lon=${cityLoc.lon}`;
+      let weatherUrl = `${process.env.REACT_APP_SERVER}/weather?lat=${cityLoc.lat}&lon=${cityLoc.lon}&day=7&units=F`;
     
       let weatherData = await axios.get(weatherUrl);
       console.log(weatherData);
@@ -101,6 +105,24 @@ class App extends React.Component {
       })
     }
   }
+
+  // getMovieData = async (cityTitle) => {
+  //   try {
+  //     let movieURL = `${process.env.REACT_APP_SERVER}/movies?title${cityTitle.title}`;
+
+  //     let movieData = await axios.get(movieURL);
+
+  //     this.setState({
+  //       movieData: movieData.data
+  //     })
+
+  //   } catch (error) {
+  //     this.setState({
+  //       error: true,
+  //       errorMessage: error.message,
+  //     });
+  //   }
+  // }
 
   render() {
   
@@ -146,6 +168,10 @@ class App extends React.Component {
           weatherData = {this.state.weatherData}
 
         />
+{/* 
+        <Movie
+          movieData = {this.state.movieData}
+        /> */}
 
         <ErrorMessage 
           errorMessage={this.state.errorMessage}

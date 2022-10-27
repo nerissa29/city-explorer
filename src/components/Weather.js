@@ -1,4 +1,3 @@
-// import './components/Weather.js';
 import React from "react";
 import Accordion from 'react-bootstrap/Accordion';
 
@@ -24,3 +23,30 @@ class Weather extends React.Component {
 }
 
 export default Weather;
+
+
+
+/*
+// import './components/Weather.js';
+import React from "react";
+
+class Movie extends React.component {
+  render() {
+    return (
+      <>
+      {this.props.movieData.map((value, idx) => 
+        <li key={idx}>{value.title}</li>
+      )}
+
+
+
+      </>
+    )
+  }
+
+}
+
+export default Movie
+
+
+*/
