@@ -1,4 +1,4 @@
-import './components/Weather.js';
+// import './components/Weather.js';
 import React from "react";
 import Accordion from 'react-bootstrap/Accordion';
 
@@ -9,7 +9,8 @@ class Weather extends React.Component {
   render() {
     return (
       <Accordion defaultActiveKey="0">
-        {this.props.weatherData.map((idx, datetime) => 
+        {/* TA Brandon caught 'idx' was passed in before 'datetime' */}
+        {this.props.weatherData.map((datetime, idx) => 
           <Accordion.Item eventKey={idx} key={idx}>          
             <Accordion.Header>{datetime.datetime}</Accordion.Header>
             <Accordion.Body>

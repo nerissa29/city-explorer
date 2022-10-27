@@ -59,7 +59,8 @@ class App extends React.Component {
       let mapData = await axios.get(mapUrl)
       console.log('mapData', mapData.data);
 
-      this.getWeatherData(cityData.data[0]);
+      let cityLocation = cityData.data[0];
+      this.getWeatherData(cityLocation);
 
       this.setState({
         cityData: cityData.data[0],
@@ -81,6 +82,7 @@ class App extends React.Component {
     }
   }
 
+  // https://localhost:3001/weather?city_name=seattle&lat=47.60621&lon=-122.33207
   getWeatherData = async (cityLoc) => {
     try {
       let weatherUrl = `${process.env.REACT_APP_SERVER}/weather?city_name=${this.state.city}&lat=${cityLoc.lat}&lon=${cityLoc.lon}`;
