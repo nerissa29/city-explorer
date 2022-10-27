@@ -1,5 +1,6 @@
 import './App.css';
 import ErrorMessage from './components/ErrorMessage';
+import Weather from './components/Weather';
 import React from 'react';
 import axios from 'axios';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -23,6 +24,7 @@ class App extends React.Component {
       error: false,
       errorMessage: '',
       show: false,
+      weatherData: [],
     }
   }
 
@@ -57,6 +59,9 @@ class App extends React.Component {
       let mapData = await axios.get(mapUrl)
       console.log('mapData', mapData.data);
 
+      let cityLocation = cityData.data[0];
+      this.getWeatherData(cityLocation);
+
       this.setState({
         cityData: cityData.data[0],
         display_name: cityData.data[0].display_name,
@@ -72,38 +77,30 @@ class App extends React.Component {
       this.setState({
         error: true,
         errorMessage: error.message
-      })
+      });
 
     }
   }
 
-  // handleErrorMessage = (err) => {
-  //   if (this.state.error) {
-  //     this.setState({
-  //       show: true,
-  //     })
-  //   }
-  // }
+  // https://localhost:3001/weather?city_name=seattle&lat=47.60621&lon=-122.33207
+  getWeatherData = async (cityLoc) => {
+    try {
+      let weatherUrl = `${process.env.REACT_APP_SERVER}/weather?city_name=${this.state.city}&lat=${cityLoc.lat}&lon=${cityLoc.lon}`;
+    
+      let weatherData = await axios.get(weatherUrl);
+      console.log(weatherData);
 
- 
+      this.setState({
+        weatherData: weatherData.data,
+      });
 
-
-
-  // >>>>> not getting the lat and lon values <<<<
-
-  // getMapData = async (event) => {
-  //   event.preventDefault();
-
-  //   let mapUrl = `https://maps.locationiq.com/v3/staticmap?key=${process.env.REACT_APP_LOCATIONIQ_API_KEY}&center=${this.state.lat},${this.state.lon}&zoom=10&markers=icon:tiny-red-cutout`
-
-  //   let mapData = await axios.get(mapUrl)
-  //   console.log('mapData', mapData.data);
-
-  //   this.setState({
-  //     mapUrl: mapUrl,
-  //   })
-  // }
-  
+    } catch (error) {
+      this.setState({
+        error: true,
+        errorMessage: error.message,
+      })
+    }
+  }
 
   render() {
   
@@ -145,8 +142,15 @@ class App extends React.Component {
           this.state.error ? <ErrorMessage /> : <p></p>
         } */}
 
+        <Weather 
+          weatherData = {this.state.weatherData}
+
+        />
+
         <ErrorMessage 
           errorMessage={this.state.errorMessage}
+          lat= {this.state.lat}
+          lon= {this.state.lon}
         />
 
       </section>

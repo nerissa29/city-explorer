@@ -1,6 +1,6 @@
 # City Explorr
 
-**Author**: Your Name Goes Here
+**Author**: Nerissa Leynes
 **Version**: 1.0.0 (increment the patch/fix version number if you make more commits past your first submission)
 
 ## Overview
@@ -8,6 +8,8 @@
 In this project, we will explore the third party APIs. We will be sending user's request to our third party API, and sould be getting a response back from that API.
 
 The user will be requesting/searching city through the page's form, and should expect a valid result if city exists.
+
+Added is the weather data coming from the Express server. The user is now able to see couple days worth of weather info for a specific city. The app will display error message if not found.
 
 ## Getting Started
 
@@ -28,25 +30,29 @@ Languages, Frameworks, and platforms:
 
 ## Change Log
 
-<!-- 01-01-2001 4:59pm - Application now has a fully-functional express server, with a GET route for the location resource. --> -->
-
 10-25-2022 11:09 pm - Application now has a fully-functional express server, with a GET route for the location resource.
 
 10-25-2022 12:37 am - Application now is showing image, with a GET route for the map resource.
 
 10-25-2022 1:35 am - Application now is showing error message once condition is met
 
+10-26-2022 8:11 pm - Application now has a fully-functional front-end and back-end
+
 ## Credit and Collaborations
 
 Collaborated with accountability partners, Jordan Kwan, and Nick Seidel, drawing/planning out the WRRC:
-<!-- <img scr='../src/images/WRRC.jpg'> -->
-image.png
+
+![WRRC Day 1](.../images/WRRC.jpg)
+![WRRC Day 2](.../images/Lab 07 WRRC.jpg)
+![WRRC Day 3](.../images/Lab 08 WRRC.jpg)
 
 Image Credits
 
 - [background image](https://unsplash.com/photos/_J5SQg9nYzo)
 
 ## Time Estimates
+
+## 1st Day Activity in Lab
 
 ### Step 1: Set up your React repository & API keys
 
@@ -95,3 +101,49 @@ Start time: 1:30 am
 Finish time: 2:38 am
 
 Actual time needed to complete: 1 hour 8 min
+
+## 2nd Day Activity in Lab
+
+### 1. Set up your server repository
+
+Name of feature: *1. Set up your server repository*
+
+Estimate of time needed to complete: 40 min - 1 hour
+
+Start time: 7:36
+
+Finish time: 8:30
+
+Actual time needed to complete: 54 min
+
+### 2. Weather (placeholder): As a user of City Explorer, I want to see weather info for the city I searched, so that I know how to pack for an upcoming trip
+
+Name of feature: *2. Weather (placeholder): As a user of City Explorer, I want to see weather info for the city I searched, so that I know how to pack for an upcoming trip*
+
+Estimate of time needed to complete: 2 hours
+
+1st Day in Lab:
+
+- Start time: 8:40pm
+
+- Finish time: 2:40am
+
+2nd Day in Lab:
+
+- Start time: 7:10pm
+
+- Finish time: 7:50pm
+
+Actual time needed to complete: 6hours 40min
+
+### 3. Errors (revisited): As a user, I want clear messages if something goes wrong so I know if I need to make any changes or try again in a different manner
+
+Name of feature: *3. Errors (revisited): As a user, I want clear messages if something goes wrong so I know if I need to make any changes or try again in a different manner*
+
+Estimate of time needed to complete: 1 hour and 30 min
+
+Start time: 7:36pm
+
+Finish time: 2:40am
+
+Actual time needed to complete: 6hours
