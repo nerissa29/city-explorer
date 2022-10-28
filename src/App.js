@@ -7,7 +7,6 @@ import axios from 'axios';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import ListGroup from 'react-bootstrap/ListGroup';
 import Figure from 'react-bootstrap/Figure';
-// import Movie from './components/Movie';
 
 
 

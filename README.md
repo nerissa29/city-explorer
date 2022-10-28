@@ -205,3 +205,19 @@ Estimate of time needed to complete: 1 hour and 30 min
 - Finish time: 8:41pm
 
 Actual time needed to complete: 5hours+
+
+## LAB 09
+
+### 1. Refactor: Modularize the back-end codebase
+
+Name of feature: *1. Refactor: Modularize the back-end codebase*
+
+Estimate of time needed to complete: 30min-1hour
+
+!st Day in Lab
+
+- Start time: 10:45pm
+
+- Finish time: 11:15pm
+
+Actual time needed to complete: 30min
