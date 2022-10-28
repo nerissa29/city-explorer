@@ -44,15 +44,15 @@ Languages, Frameworks, and platforms:
 
 Collaborated with accountability partners, Jordan Kwan, and Nick Seidel, drawing/planning out the WRRC:
 
-![WRRC Day 1](.src/images/WRRC.jpg)
+![WRRC Day 1](./src/images/WRRC.jpg)
 
 ### WRRC Day 2
 
-![WRRC Day 2](.src/images/Lab07WRRC.jpg)
+![WRRC Day 2](./src/images/Lab07WRRC.jpg)
 
 ### WRRC Day 3
 
-![WRRC Day 3](.src/images/Lab08WRRC.jpg)
+![WRRC Day 3](./src/images/Lab08WRRC.jpg)
 
 Image Credits
 
