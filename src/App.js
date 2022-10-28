@@ -24,7 +24,7 @@ class App extends React.Component {
       lon: '',
       mapUrl: '',
       error: false,
-      errorMessage: '',
+      errorMessage: 'Enter the City you want to display',
       show: false,
       weatherData: [],
       movieData: [],
@@ -95,7 +95,11 @@ class App extends React.Component {
     }
   }
 
-  // https://localhost:3001/weather?city_name=seattle&lat=47.60621&lon=-122.33207
+// >>>>>>>>>>>>>>>>>>>>>>>>>>>> on localhost <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+//
+//   http://localhost:3001/weather?city_name=seattle&lat=47.60621&lon=-122.33207&day=5&units=F
+//
+// >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 
   getWeatherData = async (cityLoc) => {
     try {
@@ -106,6 +110,8 @@ class App extends React.Component {
 
       this.setState({
         weatherData: weatherData.data,
+        error: false,
+        errorMessage: '',
       });
 
     } catch (error) {
@@ -115,6 +121,12 @@ class App extends React.Component {
       })
     }
   }
+
+// >>>>>>>>>>>>>>>>>>>>>>>>>>>> on localhost <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+//
+//  http://localhost:3001/movies?city_name=Seattle&language=en-US&page=1&include_adult=false
+//
+// >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 
   getMovieData = async (cityTitle) => {
     try {
@@ -127,6 +139,7 @@ class App extends React.Component {
       this.setState({
         movieData: movieData.data,
         error: false,
+        errorMessage: '',
       })
 
     } catch (error) {
@@ -144,6 +157,14 @@ class App extends React.Component {
       // TA Brandon advised to delete the pre-existing div and logo to see the deployed site at localhost
 
       <section>
+
+        
+        <ErrorMessage 
+          errorMessage={this.state.errorMessage}
+          lat= {this.state.lat}
+          lon= {this.state.lon}
+        />
+
         <h1>API Call</h1>
         <form onSubmit={this.getCityData}>
           <label>Enter City:
@@ -185,12 +206,7 @@ class App extends React.Component {
         <Movie
           movieData = {this.state.movieData}
         />
-
-        <ErrorMessage 
-          errorMessage={this.state.errorMessage}
-          lat= {this.state.lat}
-          lon= {this.state.lon}
-        />
+        
 
       </section>
 

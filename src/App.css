@@ -38,16 +38,13 @@
 }
 
 .selectedCityInfo {
-  margin-top: 10%;
+  margin-top: 5%;
 }
 
 h1 {
   padding-top: 150px;
 }
-.fig-parent, h1, form, .selectedCityInfo, .alertMessage {
-  /* display: flex;
-  justify-content: center;
-  align-items: center; */
+.fig-parent, h1, form, .selectedCityInfo {
   margin-left: 40%;
 }
 
@@ -61,7 +58,7 @@ section {
   background-color:rgba(75, 71, 64, 0.5);
   width: 100%;
   height: 100%;
-  padding: 150px;
+  padding: 100px;
 }
 
 body {
@@ -70,9 +67,43 @@ body {
 
 
 .alertMessage {
-  width: 45%;
+  margin-left: 35%;
   align-items: center;
   opacity: 0.5;
+  align-items: center;
+  width: 450px;
 }
 
+/* added styling */
+
+main {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  padding-bottom: 250px;
+  padding-top: 100px;
+}
+.reactCard {
+  margin: 15px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  
+}
+
+.reactCard:hover {
+  transform: scale(1.01,1.01);
+  box-shadow: 0 0 50px black;
+}
+
+.cardTitle {
+  color: #de6288;
+  cursor: pointer;  
+}
+
+.row {
+  display: flex;
+  justify-content: center;
+  font-size: 100%;
+}
 
