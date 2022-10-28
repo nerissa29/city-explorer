@@ -1,4 +1,4 @@
-# City Explorr
+# City Explorer
 
 **Author**: Nerissa Leynes
 **Version**: 1.0.0 (increment the patch/fix version number if you make more commits past your first submission)
@@ -38,13 +38,21 @@ Languages, Frameworks, and platforms:
 
 10-26-2022 8:11 pm - Application now has a fully-functional front-end and back-end
 
+10-27-2022 5:37 pm - The backend are now able to send data to the front-end, getting information from third party API's 'Weatherbit' and 'Movie DB'.
+
 ## Credit and Collaborations
 
 Collaborated with accountability partners, Jordan Kwan, and Nick Seidel, drawing/planning out the WRRC:
 
-![WRRC Day 1](src/images/WRRC.jpg)
-![WRRC Day 2](src/images/Lab 07 WRRC.jpg)
-![WRRC Day 3](src/images/Lab 08 WRRC.jpg)
+![WRRC Day 1](./images/WRRC.jpg)
+
+### WRRC Day 2
+
+![WRRC Day 2](./images/Lab07WRRC.jpg)
+
+### WRRC Day 3
+
+![WRRC Day 3](./images/Lab08WRRC.jpg)
 
 Image Credits
 
@@ -147,3 +155,53 @@ Start time: 7:36pm
 Finish time: 2:40am
 
 Actual time needed to complete: 6hours
+
+## Lab 08
+
+### 1. Weather (live): As a user of City Explorer, I want to see weather info for the city I searched, so that I know how to pack for an upcoming trip
+
+Name of feature: *1. Weather (live): As a user of City Explorer, I want to see weather info for the city I searched, so that I know how to pack for an upcoming trip*
+
+Estimate of time needed to complete: 1 hour and 30 min
+
+1st Day in Lab
+
+- Start time: 8:30pm
+
+- Finish time: 10:00pm
+
+Actual time needed to complete: 1hr 30min
+
+### 2. Movies: As a user of City Explorer, I want to see info about movies related to the city I searched, so that I can learn more about the destination
+
+Name of feature: *2. Movies: As a user of City Explorer, I want to see info about movies related to the city I searched, so that I can learn more about the destination*
+
+Estimate of time needed to complete: 1 hour and 30 min
+
+1st Day in Lab
+
+- Start time: 10:00pm
+
+- Finish time: 2:35am
+
+2nd Day in Lab
+
+- Start time: 5:00pm
+
+- Finish time: 5:37pm
+
+Actual time needed to complete: 5hours+
+
+### 3. Publish: Deploy your server. As a user, I want to access the City Explorer application on the web, so that anyone can explore from anywhere
+
+Name of feature: *3. Publish: Deploy your server. As a user, I want to access the City Explorer application on the web, so that anyone can explore from anywhere*
+
+Estimate of time needed to complete: 1 hour and 30 min
+
+2nd Day in Lab
+
+- Start time: 8:29pm
+
+- Finish time: 8:41pm
+
+Actual time needed to complete: 5hours+
