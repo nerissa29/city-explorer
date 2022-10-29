@@ -40,19 +40,27 @@ Languages, Frameworks, and platforms:
 
 10-27-2022 5:37 pm - The backend are now able to send data to the front-end, getting information from third party API's 'Weatherbit' and 'Movie DB'.
 
+10-29-2022 11:47 pm - the Weather component now has the WeatherData child component. The Movie component also now has a child component
+
 ## Credit and Collaborations
 
 Collaborated with accountability partners, Jordan Kwan, and Nick Seidel, drawing/planning out the WRRC:
 
+### WRRC LAB 06
+
 ![WRRC Day 1](./src/images/WRRC.jpg)
 
-### WRRC Day 2
+### WRRCLAB 07
 
 ![WRRC Day 2](./src/images/Lab07WRRC.jpg)
 
-### WRRC Day 3
+### WRRC LAB 08 and LAB 09
 
 ![WRRC Day 3](./src/images/Lab08WRRC.jpg)
+
+### WRRC LAB 10
+
+![WRRC Day 4](./src/images/Lab10WRRC.jpg)
 
 Image Credits
 
@@ -214,10 +222,24 @@ Name of feature: *1. Refactor: Modularize the back-end codebase*
 
 Estimate of time needed to complete: 30min-1hour
 
-!st Day in Lab
+1st Day in Lab
 
 - Start time: 10:45pm
 
 - Finish time: 11:15pm
 
 Actual time needed to complete: 30min
+
+### Refactor: Componentize the front-end codebase.
+
+Name of feature: *2. Refactor: Componentize the front-end codebase.*
+
+Estimate of time needed to complete: 30min-1hour
+
+2nd Day in Lab
+
+- Start time: 11:10pm
+
+- Finish time: 11:46pm
+
+Actual time needed to complete: 36min
