@@ -27,6 +27,7 @@ class App extends React.Component {
       show: false,
       weatherData: [],
       movieData: [],
+      src: '',
     }
   }
 
@@ -102,7 +103,7 @@ class App extends React.Component {
 
   getWeatherData = async (cityLoc) => {
     try {
-      let weatherUrl = `${process.env.REACT_APP_SERVER}/weather?lat=${cityLoc.lat}&lon=${cityLoc.lon}&day=7&units=F`;
+      let weatherUrl = `${process.env.REACT_APP_SERVER}/weather?lat=${cityLoc.lat}&lon=${cityLoc.lon}&days=8&units=F`;
     
       let weatherData = await axios.get(weatherUrl);
       console.log(weatherData);
@@ -163,20 +164,23 @@ class App extends React.Component {
           lat= {this.state.lat}
           lon= {this.state.lon}
         />
+        <div className='formDivApp'>
+          <h1>API Call</h1>
+          <form onSubmit={this.getCityData}>
+            <label>Enter City:
+              <input type="text" onInput={this.handleInput} />
+              <button type="submit">Explore!</button>
+            </label>
+          </form>
 
-        <h1>API Call</h1>
-        <form onSubmit={this.getCityData}>
-          <label>Enter City:
-            <input type="text" onInput={this.handleInput} />
-            <button type="submit">Explore!</button>
-          </label>
-        </form>
 
-        <ul className='selectedCityInfo'>
+        <ul className='cityFormInfo'>
             <ListGroup.Item>{this.state.display_name}</ListGroup.Item>
             <ListGroup.Item>{this.state.lat}</ListGroup.Item>
             <ListGroup.Item>{this.state.lon}</ListGroup.Item>
         </ul>
+
+
 
         <Figure className='fig-parent'>
           <Figure.Image
@@ -193,6 +197,9 @@ class App extends React.Component {
           </Figure.Caption>
         </Figure>
 
+        </div>
+
+
         {/* {
           this.state.error ? <ErrorMessage /> : <p></p>
         } */}
@@ -204,9 +211,7 @@ class App extends React.Component {
 
         <Movie
           movieData = {this.state.movieData}
-        />
-        
-
+        />       
       </section>
 
 
