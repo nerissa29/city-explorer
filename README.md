@@ -230,7 +230,7 @@ Estimate of time needed to complete: 30min-1hour
 
 Actual time needed to complete: 30min
 
-### Refactor: Componentize the front-end codebase.
+### Refactor: Componentize the front-end codebase
 
 Name of feature: *2. Refactor: Componentize the front-end codebase.*
 
