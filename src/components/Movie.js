@@ -11,6 +11,8 @@ class Movie extends React.Component {
       />
     })
 
+    console.log('moviesInfo', moviesInfo);
+
     return (
       <>
         <main>
